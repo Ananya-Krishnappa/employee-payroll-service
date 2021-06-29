@@ -15,6 +15,7 @@ import org.apache.logging.log4j.Logger;
 import com.bridgelabz.employeepayroll.dto.EmployeePayroll;
 import com.bridgelabz.employeepayroll.exception.EmployeePayrollException;
 import com.bridgelabz.employeepayroll.service.impl.EmployeePayrollService;
+import com.bridgelabz.employeepayroll.type.IOService;
 
 public class EmployeePayrollServiceApp {
 	private static final Logger LOG = LogManager.getLogger(EmployeePayrollService.class);
@@ -23,7 +24,8 @@ public class EmployeePayrollServiceApp {
 	public static void main(String[] args) throws EmployeePayrollException {
 		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
 		employeePayrollService.readEmployeePayrollData(readEmployeePayrollData());
-		employeePayrollService.writeEmployeePayrollData();
+		employeePayrollService.writeEmployeePayrollData(IOService.CONSOLE_IO);
+		employeePayrollService.writeEmployeePayrollData(IOService.FILE_IO);
 	}
 
 	/**

@@ -9,6 +9,12 @@ public class EmployeePayroll {
 
 	}
 
+	public EmployeePayroll(int id, String name, Double salary) {
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+	}
+
 	public int getId() {
 		return id;
 	}
